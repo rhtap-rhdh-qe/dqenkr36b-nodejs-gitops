@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dqenkr36b-nodejs-gitops
+  description: This is GitOps manifest for dqenkr36b-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: dqenkr36b-nodejs
+    janus-idp.io/tekton: dqenkr36b-nodejs 
+    backstage.io/kubernetes-id: dqenkr36b-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:dqenkr36b-nodejs
